@@ -1,0 +1,22 @@
+.cart_container{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(250px, auto));
+    grid-auto-rows: minmax(15vh, 190px);
+    margin: 20px 0 0 5px;
+    padding: 5px;
+}
+
+.item_details{
+    display: flex;
+    
+}
+
+.cart_image{
+    height:100px;
+    width: 100px;
+}
+.item_title{
+    margin-top: 0;
+    padding-left:45px;
+
+}

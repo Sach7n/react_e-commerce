@@ -1,0 +1,21 @@
+
+
+@media only screen and (min-width: 374px) {
+    .container-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(182px, auto));
+    grid-auto-rows: minmax(28vh, 100px);}}
+
+@media only screen and (min-width: 768px) {
+    .container-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, auto));
+    grid-auto-rows: minmax(35vh, 150px);}}
+
+@media only screen and (min-width: 992px) {
+    .container-grid{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(250px, auto));
+    grid-auto-rows: minmax(45vh, 250px);
+}}
+
