@@ -1,37 +1,48 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { ProdContext } from '../Context';
 import "./CartItem.css";
 
 const CartItems = props => {
-    
+
     let item = props.value;
-    const { increament,decreament,removeItem } = useContext(ProdContext);
+    const { increament, decreament, removeItem } = useContext(ProdContext);
 
 
     return (
         <div className="cart_container">
+
             
+
             <div className="item_details">
-            <img className="cart_image" src={item.img} alt="/"/>       
-            <p className="item_title">{item.title}</p>
+                <img className="cart_image" src={item.img} alt="/" />
+                <p className="item_title">{item.title}</p>
             </div>
-            
-            
-            <div>
-            {item.count}       
+
+            <div className="qty_class">
+                <div className="tag"><p>qty</p></div>
+                <div className="qty_items">
+                    <button onClick={() => increament(item.id)}>+</button>
+                    <p>{item.count}</p>
+                    <button onClick={() => decreament(item.id)}>-</button>
+                </div>
             </div>
-            <div>
-            {item.total}       
+
+            <div className="price_class">
+                <div className="tag"><p>Price</p></div>
+                <div>    <p>${item.price}</p></div>
             </div>
-            <div>
-            {item.price}       
+
+            <div className="total_class">
+                <div className="tag"><p>Total</p></div>
+                <div>    <p>${item.total}</p></div>
             </div>
-            <button onClick={()=>removeItem(item.id)}>remove item</button>
-            <button onClick={()=>increament(item.id)}>+</button>
-            <button onClick={()=>decreament(item.id)}>-</button>
-            
+
+            <div className="remove_class">
+                <button onClick={() => removeItem(item.id)}>x</button>
+            </div>
+
             <div>
-                   
+
             </div>
         </div>
     );

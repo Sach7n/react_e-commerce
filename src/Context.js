@@ -26,6 +26,9 @@ const Context = props => {
         const selectedProduct = tempCart.find(item => item.id === id);
         const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
+        product.inCart = true;
+        product.count = 1;
+        product.total = product.price;
         setIteams(items => [...items, product]);
         console.log(items);
         console.log(cart + "+" + id);

@@ -9,13 +9,14 @@
 @media only screen and (min-width: 768px) {
     .container-grid{
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, auto));
+    grid-template-columns: repeat(4, minmax(200px, auto)) ;
     grid-auto-rows: minmax(35vh, 150px);}}
 
 @media only screen and (min-width: 992px) {
     .container-grid{
+    margin: 15px 0 0 20px;
     display: grid;
-    grid-template-columns: repeat(6, minmax(250px, auto));
-    grid-auto-rows: minmax(45vh, 250px);
+    grid-template-columns: repeat(6, minmax(210px, auto));
+    grid-auto-rows: minmax(37vh, 200px);
 }}
 

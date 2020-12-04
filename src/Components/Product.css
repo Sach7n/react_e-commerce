@@ -1,40 +1,16 @@
-.main-cont{
-    border: 1px  solid teal;
-    margin: 15px;    
-}
-.image-container{
-    height:200px;
-    max-height: 200px;
-    border: 5px  solid springgreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.image{
-    max-width: 150px;
-    max-height: 150px;
-}
-.item-name{
-    text-align: center;
-}
-.button-class{
-    display: flex;
-    justify-content: center;
-}
-
-
 
 @media only screen and (min-width: 374px) {
     .main-cont{
-        margin: 2px;    
+        margin: 3px 0 0 0;    
+        background-color: var(--MainWhite);
     }
     .image-container{
         height:165px;
         max-height: 165px;
-        border: 1px  solid springgreen;
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.06), 0 1px 1px rgba(0,0,0,0.03);    
     }
     .image{
         max-width: 150px;
@@ -51,15 +27,48 @@
         text-align: left;
     }
     .button-class button{
-        padding: 0;
+        padding: 2px;
         margin: 2px 4px 0 0;
         max-height: 20px;
+        background-color: var(--MainButton);
+        color: var(--MainFont);
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .container-grid{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(200px, auto));
-    grid-auto-rows: minmax(35vh, 150px);}}
-
+    .main-cont{
+        margin: 15px;  
+        max-height: 275px;
+        max-width: 200px;
+        background-color: var(--MainWhite);
+    }
+    .image-container{
+        height:200px;
+        max-height: 175px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image{
+        max-width: 160px;
+        max-height: 165px;
+    }
+    .item_desc{
+        display: flex;
+        margin: 18px 0 0 4px;
+        justify-content: space-between;
+    }
+    .item-name p{
+        margin: 3px;
+        padding: 0;
+        text-align: left;
+    }
+    .button-class button{
+        padding: 1px 4px;
+        margin: 6px 9px 0 0;
+        max-height: 20px;
+        background-color: var(--MainButton);
+        color: var(--MainFont);
+    }
+    
+    }
