@@ -8,11 +8,10 @@ import './Cart.css';
 
 const Cart = props => {
 
-    const { items, loading, setLoading } = useContext(ProdContext);
-    console.log(items)
+    const { items} = useContext(ProdContext);
     return (
         <>
-            {(items.length==0) ? (
+            {(items.length===0) ? (
                 <h1>Your cart is empty</h1>
 
             ) : (

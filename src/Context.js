@@ -30,9 +30,7 @@ const Context = props => {
         product.count = 1;
         product.total = product.price;
         setIteams(items => [...items, product]);
-        console.log(items);
-        console.log(cart + "+" + id);
-    }
+      }
 
     const removeItem = id => {
         const removedItems = items.filter(item => item.id !== id)
