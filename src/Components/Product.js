@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, {useContext } from 'react';
 import { Link } from "react-router-dom";
 import { ProdContext } from '../Context';
 import "./Product.css";
@@ -6,7 +6,7 @@ import "./Product.css";
 const Product = props => {
 
     let item = props.value;
-    const { handleCart,cart } = useContext(ProdContext);
+    const { handleCart } = useContext(ProdContext);
 
     return (
         <div className="main-cont">

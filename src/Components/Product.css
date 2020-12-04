@@ -3,6 +3,7 @@
     .main-cont{
         margin: 3px 0 0 0;    
         background-color: var(--MainWhite);
+        height: 210px;
     }
     .image-container{
         height:165px;
@@ -38,6 +39,8 @@
 @media only screen and (min-width: 768px) {
     .main-cont{
         margin: 15px;  
+        height: 250px;
+        max-height: 350px;
         max-height: 275px;
         max-width: 200px;
         background-color: var(--MainWhite);

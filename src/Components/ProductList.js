@@ -1,11 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import { ProdContext } from '../Context';
 import Product from "./Product";
 import "./ProductList.css"
 
 const ProductList = () => {
 
-    const { products, loading } = useContext(ProdContext);
+    const { products,setProducts,items, loading } = useContext(ProdContext);
+
+    useEffect(() => {
+        const fetchItems = () => {
+            setProducts(products)
+        }
+        fetchItems();
+    }, [items])
 
     return (
         <div>

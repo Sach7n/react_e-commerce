@@ -10,9 +10,6 @@ const CartItems = props => {
 
     return (
         <div className="cart_container">
-
-            
-
             <div className="item_details">
                 <img className="cart_image" src={item.img} alt="/" />
                 <p className="item_title">{item.title}</p>
@@ -40,9 +37,7 @@ const CartItems = props => {
             <div className="remove_class">
                 <button onClick={() => removeItem(item.id)}>x</button>
             </div>
-
             <div>
-
             </div>
         </div>
     );

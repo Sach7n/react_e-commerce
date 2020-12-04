@@ -9,7 +9,6 @@ const Context = props => {
 
     const [products, setProducts] = useState()
     const [loading, setLoading] = useState(true)
-    const [cart, setCart] = useState(false);
     const [items, setIteams] = useState([]);
 
 
@@ -35,7 +34,6 @@ const Context = props => {
     const removeItem = id => {
         const removedItems = items.filter(item => item.id !== id)
         setIteams(removedItems);
-        setCart(items);
     }
     const increament = id => {
         let tempCart = [...items]
@@ -64,11 +62,11 @@ const Context = props => {
     }
     const providerValues = {
         products,
+        setProducts,
         loading,
         handleCart,
         removeItem,
         items,
-        cart,
         increament,
         decreament
     };
