@@ -8,7 +8,7 @@ const SearchBox = props => {
       type='text'
       name='q'
       placeholder='Search'
-      className='mr-sm-2 ml-sm-5 me-2'
+      className='mr-sm-2 ml-sm-5 me-md-2 me-xs-1'
     ></Form.Control>
     <Button type='submit' variant='outline-success' className='p-2'>
       Search
