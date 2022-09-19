@@ -32,7 +32,12 @@ const Context = props => {
       }
 
     const removeItem = id => {
-        
+        let tempCart = [...products]
+        const selectedProduct = tempCart.find(item => item.id === id);
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+        product.inCart = false;
+        product.count = 0;
         const removedItems = items.filter(item => item.id !== id)
         setIteams(removedItems);
     }
