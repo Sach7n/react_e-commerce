@@ -1,34 +1,46 @@
-import React, {useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { ProdContext } from '../Context';
-import "./Product.css";
+import { Button, Card } from 'react-bootstrap'
 
 const Product = props => {
 
     let item = props.value;
     const { handleCart } = useContext(ProdContext);
 
+    const styles = {
+        card: {
+            backgroundColor: '#B7E0F2',
+            padding: '1%',
+            height: '80%'
+        },
+        cardImage: {
+            objectFit: 'cover',
+            height: '200px',
+        }
+    }
+
     return (
-        <div className="main-cont">
+        <Card className="my-3 rounded h-60">
 
-            <div className="image-container">
-                <img className="image" src={item.img} alt="failed to load" />
-            </div>
-
-            <div className="item_desc">
-                <div className="item-name">
+            
+                <Card.Img 
+                    style={styles.cardImage} src={item.img} alt="failed to load" variant='top' />
+            
+            <Card.Body className="d-flex flex-fill">
+                <Card.Title className="flex-fill">
                     <p>{item.title}</p>
                     <p>${item.price}</p>
-                </div>
-                <div className="button-class">
-                    {item.count===0 ?
-                        (<button className="button" onClick={() => handleCart(item.id)}>+</button>):(
-                            <Link to="/Cart" >  <button >in cart</button></Link>
+                </Card.Title>
+                <Card.Text className="button-class">
+                    {item.count === 0 ?
+                        (<Button className="button" onClick={() => handleCart(item.id)}>+</Button>) : (
+                            <Link to="/Cart" >  <Button >in cart</Button></Link>
                         )}
-                </div>
-            </div>
+                </Card.Text>
+            </Card.Body>
 
-        </div>
+        </Card>
     );
 };
 

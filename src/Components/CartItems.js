@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ProdContext } from '../Context';
-import "./CartItem.css";
+import { Row, Col, Button, Image, Container } from 'react-bootstrap';
 
 const CartItems = props => {
 
@@ -9,37 +9,44 @@ const CartItems = props => {
 
 
     return (
-        <div className="cart_container">
-            <div className="item_details">
-                <img className="cart_image" src={item.img} alt="/" />
-                <p className="item_title">{item.title}</p>
-            </div>
+        <Row md="d-flex align-items-center flex-row"
+            style={{ gap: ".5rem" }}>
+            <Col md={3} xs={4}>
+                <Image className="cart_image" src={item.img} alt="/" fluid />
+                <div className="d-flex justify-content-between">{item.title} <span></span> ${item.price}</div>
+                
+            </Col>
 
-            <div className="qty_class">
-                <div className="tag"><p>qty</p></div>
-                <div className="qty_items">
-                    <button onClick={() => increament(item.id)}>+</button>
-                    <p>{item.count}</p>
-                    <button onClick={() => decreament(item.id)}>-</button>
+
+
+            <Col md={4} xs={4}>
+                <div
+                    className="d-flex align-items-center flex-column"
+                    style={{ gap: ".3rem" }}
+                >
+                    <Container
+                        className="d-flex align-items-center justify-content-center"
+                        style={{ gap: ".1rem" }}
+                         >
+                        <Button onClick={() => decreament(item.id)}>-</Button>
+                        <div style={{ gap: ".7rem" }}>
+                            <span className="fs-3">{item.count}</span> in cart
+                        </div>
+                        <Button onClick={() => increament(item.id)}>+</Button>
+                    </Container>
                 </div>
-            </div>
 
-            <div className="price_class">
-                <div className="tag"><p>Price</p></div>
-                <div>    <p>${item.price}</p></div>
-            </div>
+            </Col>
 
-            <div className="total_class">
-                <div className="tag"><p>Total</p></div>
-                <div>    <p>${item.total}</p></div>
-            </div>
 
-            <div className="remove_class">
-                <button onClick={() => removeItem(item.id)}>x</button>
-            </div>
-            <div>
-            </div>
-        </div>
+            <Col md={3} xs={2} style={{ gap: ".5rem" }}>
+                <span className="fs-3">${item.total}</span> in total
+            </Col>
+
+            <Col md={1} xs={1} style={{ gap: ".5rem" }}>
+                <Button onClick={() => removeItem(item.id)}>x</Button>
+            </Col>
+        </Row>
     );
 };
 

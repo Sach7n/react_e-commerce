@@ -1,23 +1,27 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
-import Cart from './Components/Cart';
-import ProductList from './Components/ProductList';
-import "./App.css";
-import MainNavigation from "./Components/Navigation/MainNavigation"
-import SignUp from './Components/SignUp';
+import { Route, Switch,BrowserRouter as Router  } from "react-router-dom";
+import { Container } from 'react-bootstrap'
+import Cart from '../src/Pages/Cart';
+import ProductList from '../src/Pages/ProductList';
+import Navigation from "./Components/Navigation"
+import SignUp from './Pages/SignUp';
 
 const App = () => {
   return (
-    <div className='main_app'>
-    <MainNavigation/>
-    <Switch>
+    <Router>
+      <Navigation/>
+      <Container>
+        <main className='py-3'>
+          
+          <Switch>
+            <Route exact path="/" component={ProductList} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/cart" component={Cart} />
 
-    <Route exact path="/" component={ProductList}/>
-    <Route exact path="/signup" component={SignUp}/>
-    <Route exact path="/cart" component={Cart}/>
-
-    </Switch>
-    </div>
+          </Switch>
+        </main>
+      </Container>
+    </Router>
   );
 };
 
