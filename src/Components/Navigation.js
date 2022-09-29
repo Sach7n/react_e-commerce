@@ -17,7 +17,13 @@ const Navigation = props => {
                     <Navbar.Collapse id='basic-navbar-nav'>
 
                         <Nav className="justify-content-end"  style={{ width: "100%" }}>
-                        
+
+                        <LinkContainer to="/SignIn">
+                                <Nav.Link>
+                                    Sign In
+                                </Nav.Link>
+                            </LinkContainer>
+
                             <LinkContainer to="/SignUp">
                                 <Nav.Link>
                                     Sign up
@@ -26,6 +32,10 @@ const Navigation = props => {
 
                             <LinkContainer to="/Cart">
                                 <Nav.Link>My Cart</Nav.Link>
+                            </LinkContainer>
+
+                            <LinkContainer to="/admin/addProduct">
+                                <Nav.Link>Admin</Nav.Link>
                             </LinkContainer>
                         </Nav>
 

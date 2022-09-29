@@ -1,10 +1,13 @@
 import React from 'react';
-import { Route, Switch,BrowserRouter as Router  } from "react-router-dom";
+import { Route, Routes,BrowserRouter as Router  } from "react-router-dom";
 import { Container } from 'react-bootstrap'
 import Cart from '../src/Pages/Cart';
 import ProductList from '../src/Pages/ProductList';
+import AddProductScreen from '../src/Pages/AddProductScreen';
 import Navigation from "./Components/Navigation"
 import SignUp from './Pages/SignUp';
+import SignIn from './Pages/SignIn';
+
 
 const App = () => {
   return (
@@ -13,12 +16,15 @@ const App = () => {
       <Container>
         <main className='py-3'>
           
-          <Switch>
-            <Route exact path="/" component={ProductList} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/cart" component={Cart} />
+          <Routes>
+            <Route exact path="/" element={<ProductList/>} />
+            <Route exact path="/signup" element={<SignUp/>} />
+            <Route exact path="/signIn" element={<SignIn/>} />
+            <Route exact path="/cart" element={<Cart/>} />
+            <Route exact path="/admin/addProduct" element={<AddProductScreen/>} />
 
-          </Switch>
+
+          </Routes>
         </main>
       </Container>
     </Router>
